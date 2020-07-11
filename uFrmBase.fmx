@@ -1,0 +1,382 @@
+object FrmBase: TFrmBase
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 535
+  ClientWidth = 480
+  Fill.Color = xFFC9CAD9
+  Fill.Kind = Solid
+  Position = ScreenCenter
+  StyleBook = FrmMenu.StyleBook
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object TabControl: TTabControl
+    Align = Client
+    Size.Width = 480.000000000000000000
+    Size.Height = 535.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'TabControlStyle'
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      480s
+      535s
+      480s
+      535s)
+    object TabLista: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Lista'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object lytBusca: TLayout
+        Align = Top
+        Position.Y = 48.000000000000000000
+        Size.Width = 480.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object rctBusca: TRectangle
+          Align = Client
+          Fill.Color = xFFFCFCFC
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 7.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 7.000000000000000000
+          Size.Width = 460.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = xFFE8E8E8
+          XRadius = 4.000000000000000000
+          YRadius = 4.000000000000000000
+          object edt_busca: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            StyleLookup = 'EditStyle'
+            TabOrder = 0
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.FontColor = xFF323232
+            Margins.Left = 8.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Size.Width = 384.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Pesquisar . . .'
+            StyledSettings = [Family, Style]
+          end
+          object img_busca: TImage
+            MultiResBitmap.Height = 48
+            MultiResBitmap.Width = 48
+            MultiResBitmap = <
+              item
+                Width = 48
+                Height = 48
+                PNG = {
+                  89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+                  87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  0444494441546843ED985D681C5514C7CFBD3349FA91A4530A124510B5A09482
+                  8F7EED36C462B1BA4141A288FA6AA98F222A92EE7613AA68EB43F529AFB52036
+                  2F62B62A04093641147C5141F0C1378B552AD9C4EA4EBAB3737ACE9D934D8A49
+                  73EFCCAA2BCC0F42CE39BBD99DFFCCBDE7FE4F202727272727E7FF8C92DFA919
+                  1B3BE78577DFFC10003E0E4ADD777505EE0C1BD1E0A0F2AFC6FD70497BF1F70A
+                  F4E7918A3EFCA43A7249FEAC63641080AA549E7F2E6E41D9F3D45E296E4E1DA2
+                  3880B31079E3E7DF78E0A25433934AC0A395B9210FFDB3141E4C2AF6B4FE822B
+                  7A07BE589B38F0BE9432A1E5B735A3952FF77AA8BFA270DDC5878B88781A100E
+                  41D31F5A56510FAAED3B2186FD88EA2860BC206F046F07F42B506746CBF3557E
+                  8A524E8DD30724779E2F5EDF9654EA08189C52A19AFCF864E18FA4B631A56317
+                  8651C5531ABCBBA4C4BC3C33517C47E254380840355A5E98A5C0DCF915F8B3D1
+                  8B3B9FAC4D163FE5DC86B1CA5C7F88FA1CDD80C39C2FD7A37860B73F5CAB16DB
+                  4FC8156B01A5F285E7F9D127599D564CF098CBC5AF325C99DB3618EB5950BAC0
+                  791CC30F57BCE89E2FAA2391798323567B805B25771B49E96104A7D25C3C4317
+                  1A3675FC0C6F66CEB5867DFDD8F3B47931055602B8CFAFB5CA7091D77C12A7E3
+                  B3EAC8CF7A3B9E94942E223E22A133965D880E2901B1EFCC561BD6066A545375
+                  EAAA49B65478E2B5AFF724B11B7602E8849588368D3A2F612666DEBCFFD75D00
+                  DF2459A09A7DCD7B93D80D2B016C0F240488FCEF24EA00F1B71280C678ED3B1C
+                  B0DB03E46D2484E5DEF077093B80BE2C012D4D450FC41D2B016CCC24840118E8
+                  95303BB4A124A255BABA1FDCB012C0AE524250ADC6ED12664629BC43423E107E
+                  91C8092B016C8925A4F3581525CC84395B9AF183925273C0F67E70C14A00FB79
+                  09296E3D2B61261AFB6E39A87BFC9B4CD284CB7D3FFE96AA395809E06184FDBC
+                  49C802B03133716AE839623C2E09A00F1F4C4F3FF5CFED019EA4CC3022B0AB64
+                  6326A933A5F2C20B7427CC52E4C3CC8FD569F3420AAC041868926AFB17B2C4EC
+                  2AD99899D71C2855160ED165BF27290408EF7E74A2F093A4CE580BE031902729
+                  49097D985DE52395B95BA5B00566043D02B8585310F44891AAD0903015CE1351
+                  3249AD395333229231636FC3F640CA6DB8DBF0864DD6FC261D0CA13A33593C2E
+                  991329463A33D8BC44C3C8DB8381DF7E82BC96136FC3F6804E583AA4B8CF73AB
+                  6C779B1B9152440A0109A5CA7C015B30C57E5E4A5BC22279CDF3B2A12F7E5DCA
+                  6BA410915A00439BD8E76124F1F34B3461051B7F1EF5796E95DC6D5637ECE8B1
+                  F9E3F4ED15F3FA7A1C456412B01EF6F36C89D955B23133DE86EC019FB07C486D
+                  D4E73B21A26302D29255C47F2E80C922A22B04309B8940C0F1DAC4811392FE8D
+                  AE11C06C24823BD7D04AB867FAAD8797A4741DF656E25FC02C175A36921A823A
+                  556E4057096058042F1BF31F0B72C018E02B9BDDFDAE66ECD5D95DFC23694E4E
+                  4E4E5702700D5E55AD53FF6337750000000049454E44AE426082}
+                FileName = 
+                  'D:\99Coders\Mobile 360\Curso 2.0\03 - App mobile\05 - Tela princ' +
+                  'ipal - Tabs\FontesDelphi\Images\icon-busca.png'
+              end>
+            Align = Right
+            Margins.Right = 10.000000000000000000
+            Position.X = 400.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 36.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+      end
+      object lv_itens: TListView
+        ItemAppearanceClassName = 'TDynamicAppearance'
+        ItemEditAppearanceClassName = 'TDynamicAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        ItemSpaces.Left = 0.000000000000000000
+        ItemSpaces.Right = 0.000000000000000000
+        Align = Client
+        Size.Width = 480.000000000000000000
+        Size.Height = 437.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        ItemAppearance.ItemHeight = 80
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'TxtValor'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 14.000000000000000000
+            Appearance.TextAlign = Leading
+            Appearance.TextColor = xFF4D7EC3
+            Appearance.Width = 273.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 72.000000000000000000
+            Appearance.PlaceOffset.Y = 49.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'TxtDescricao'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 14.000000000000000000
+            Appearance.TextAlign = Leading
+            Appearance.TextVertAlign = Leading
+            Appearance.WordWrap = True
+            Appearance.TextColor = xFFB9B9B9
+            Appearance.Width = 273.000000000000000000
+            Appearance.Height = 38.000000000000000000
+            Appearance.PlaceOffset.X = 72.000000000000000000
+            Appearance.PlaceOffset.Y = 10.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'ImgFoto'
+            AppearanceClassName = 'TImageObjectAppearance'
+            Appearance.Width = 60.000000000000000000
+            Appearance.Height = 60.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+            Appearance.PlaceOffset.Y = 10.000000000000000000
+          end>
+        ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+          end>
+        ShowSelection = False
+      end
+      object tctToolBarLista: TRectangle
+        Align = Top
+        Fill.Color = xFF576490
+        Size.Width = 480.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object lbl_Nome: TLabel
+          Align = Contents
+          StyledSettings = [Family]
+          Size.Width = 480.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'NOME_DA_TELA'
+          TabOrder = 0
+        end
+        object img_Add: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0172494441545847ED953F4E854010C66101C5C2C286E225F61EC0D6428D47D0
+                23BCABD87B021BEDBC8431B1B6D01398182D804212E4AFDF2C23790AC4ECF06C
+                CCFE92C90EC3ECF2ED2E3BEB582C529AA6392ACBF2B1288A67F8671C3646716B
+                44DBB63EEC388EE3BD244916F097FCCA18910040FDB6A22852301702B6BBB039
+                52012DACE95CCDAA6F8454C0DAB002E60870B99D854880EBBA259A8FEE495373
+                6BCCA8003EE7C18479B010697E97AD5188D1711CCBEF8D73BF31584654B54324
+                9FC0DDE8220368B634E081E779FB1440357CF17DFF92E2B0C9ADC1CADD2BA56E
+                F8711C94D7270CFE27E479FEC69FE9196C01566087DDB553D7F526BB3D83E582
+                D0538858A2A5F24A15EF2754F53CE4EC0641B0A0409665EF61183EC0A5098D6D
+                818E61F9AF61173A3217CCE65CAF2BA8AAEA8EC3C6888E21BEE9A121FB42340E
+                21ED48FD56FB4EFEF9BF2156BE2EAC807F23403C8EB42315A3D1CBC51491005C
+                2A35EC1697D06B9AA639AADB15BFB2580C719C4FEC470621584F468F00000000
+                49454E44AE426082}
+              FileName = 
+                'D:\99Coders\Mobile 360\Curso 2.0\03 - App mobile\05 - Tela princ' +
+                'ipal - Tabs\FontesDelphi\Images\add.png'
+            end>
+          Align = Right
+          Margins.Right = 5.000000000000000000
+          Position.X = 425.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          WrapMode = Center
+          OnClick = img_AddClick
+        end
+        object img_voltar: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0098494441545847ED96C10980300C458B1B084EE3009E9DC0499CC08BEB3893
+                1348A18D3F90400F9E84A62279503E3487CFFFED21C1717E0511F539E7156791
+                2B3B603EA4947628410FB9B68193B3798CF1C239D1C028A3FA94C9D91C32CBA8
+                3E0FC92719D5C7937B72D3E40CCCB71AC93BD1EFD3FC091898B6FB848A37A178
+                13CA579BB05B4894B209A8ED4AA6701348DF6629759C7784700358B459058C61
+                B5950000000049454E44AE426082}
+              FileName = 'D:\Projetos\Mobile-360\Images\icon-voltar.png'
+            end>
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          WrapMode = Center
+          OnClick = img_voltarClick
+        end
+      end
+    end
+    object TabItem: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Item'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object rctToolBarItem: TRectangle
+        Align = Top
+        Fill.Color = xFF576490
+        Size.Width = 480.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object lbl_Nome_Item: TLabel
+          Align = Contents
+          StyledSettings = [Family]
+          Size.Width = 480.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'NOME_DA_TELA'
+          TabOrder = 0
+        end
+        object img_salvar: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0134494441545847ED944B4FC2401446EBDE883C054488F1FFB3322EDC931091
+                873C044408F17FB4E5DCE42B31318620CCB899934CA673BF3BF7A45D340A0402
+                011FA4699A8BE3F899D556C91FC8AF11BFB0A7EC0B95FD20794FF24D92242D45
+                EEC19967BD6672B6A622F7F0A605A47DC9D79CEF14B947F281E49F9C1B8ADC83
+                AC887428F9EA3FE423C93F38DF2A3A0E2E3FB11E9973A9D241E82D71E74DF225
+                F2BAA2E3E0FE0503B61AD461D095A25FA1A74CEF5877167F966730E081415F1A
+                D865CB29FA81E4936FF29AA2D360D03D03B32F613F92BCA23DF454C8A6EA99B3
+                55159D07042D06DB0FC4047DCE054596DD509B297BB7B3A2F3C2FC2682B54443
+                44451EAB26556D46ADA276372068205A493866D9E7B6E7A9737906A23AC2A589
+                0D9E27D4CA8AFD80B08678C4EA79970702017744D10ED23A914E350B172D0000
+                000049454E44AE426082}
+              FileName = 'D:\Projetos\Mobile-360\Images\icon-salvar.png'
+            end>
+          Align = Right
+          Margins.Right = 5.000000000000000000
+          Position.X = 425.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          WrapMode = Center
+        end
+        object img_voltar_lista: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0098494441545847ED96C10980300C458B1B084EE3009E9DC0499CC08BEB3893
+                13D8431B7F20811E3C094D45F2A07C680E9FFFDB4382E3FC0A22EA73CE2BCE22
+                5776C07C4829ED50821E726D032767F318E38573A2815146F52993B339649651
+                7D1E924F32AA8F27F7E4A6C919986F359277A2DFA7F91330306DF709156F42F1
+                2694AF3661B79028651350DB954CE12690BECD52EA38EF08E106E28D58B7FEF5
+                91BF0000000049454E44AE426082}
+              FileName = 'D:\Projetos\Mobile-360\Images\icon-voltar.png'
+            end>
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          WrapMode = Center
+          OnClick = img_voltarClick
+        end
+      end
+    end
+  end
+  object ActionList: TActionList
+    Left = 87
+    Top = 12
+    object ActItem: TChangeTabAction
+      Category = 'Tab'
+      Tab = TabItem
+    end
+    object ActLista: TChangeTabAction
+      Category = 'Tab'
+      Tab = TabLista
+    end
+  end
+end

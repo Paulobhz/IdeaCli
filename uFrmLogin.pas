@@ -37,6 +37,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure edtUsuarioKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
+    procedure btnAcessarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -48,7 +50,21 @@ var
 
 implementation
 
+uses
+  uFrmMenu;
+
 {$R *.fmx}
+
+procedure TFrmLogin.btnAcessarClick(Sender: TObject);
+begin
+    //validar usuário
+    if not Assigned(FrmMenu) then
+        Application.CreateForm(TFrmMenu,FrmMenu);
+    Application.MainForm := FrmMenu;
+    FrmMenu.Show;
+    FrmLogin.Close;
+
+end;
 
 procedure TFrmLogin.edtUsuarioKeyUp(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);
@@ -61,7 +77,14 @@ begin
       if (Sender is TEdit)and(TEdit(Sender).tag = 2) then
           btnAcessar.SetFocus;
    end;
+   if Key = VK_ESCAPE then
+      Close;
 
+end;
+
+procedure TFrmLogin.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    FrmLogin := nil;
 end;
 
 procedure TFrmLogin.FormShow(Sender: TObject);
