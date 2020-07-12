@@ -103,7 +103,7 @@ var
 implementation
 
 uses
-  uDm;
+  uDm, uFrmMenu;
 
 {$R *.fmx}
 
@@ -170,8 +170,15 @@ end;
 
 procedure TFrmCliente.img_AddClick(Sender: TObject);
 begin
+
+    if NOT FrmMenu.VerificaPermissao('CLI','I') then
+    begin
+        fancy.Show(TIconDialog.Error,'Permissão','Você não tem permissão para acessar essa opção!','Ok');
+        Exit;
+    end;
     cod_Cli            := '';
     modo               := 'I';
+    edt_cod.Text       := '';
     edt_Obs.Text       := '';
     edt_cid.Text       := '';
     edt_nome.Text      := '';
@@ -216,6 +223,12 @@ end;
 
 procedure TFrmCliente.img_excluirClick(Sender: TObject);
 begin
+    if NOT FrmMenu.VerificaPermissao('CLI','D') then
+    begin
+        fancy.Show(TIconDialog.Error,'Permissão','Você não tem permissão para acessar essa opção!','Ok');
+        Exit;
+    end;
+
     fancy.Show(TIconDialog.Question, 'Confirmação', 'Deseja excluir o cliente?',
                'Sim', ClickDelete, 'Não');
 end;
@@ -341,10 +354,12 @@ procedure TFrmCliente.lv_itensItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 begin
     try
-        //Testar permissão de Inclusao
-        {if NOT Permissao('CADCLI','A') then
+        //Testar permissão de Alteração
+        if NOT FrmMenu.VerificaPermissao('CLI','A') then
+        begin
+            fancy.Show(TIconDialog.Error,'Permissão','Você não tem permissão para acessar essa opção!','Ok');
             Exit;
-         }
+        end;
         cod_cli := AItem.TagString;
         modo := 'A';
         img_excluir.Visible := true;
