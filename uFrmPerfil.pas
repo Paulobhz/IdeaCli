@@ -206,13 +206,13 @@ begin
 
         if Modo = 'I' then
         begin
-            dm.qry_perfil.SQL.Add('INSERT INTO TAB_PERFIL(NOME, SITUACAO ');
-            dm.qry_perfil.SQL.Add('VALUES(:NOME, :SITUACAO ');
+            dm.qry_perfil.SQL.Add('INSERT INTO TAB_PERFIL(NOME, SITUACAO) ');
+            dm.qry_perfil.SQL.Add('VALUES(:NOME, :SITUACAO) ');
         end
         else
         begin
             dm.qry_perfil.SQL.Add('UPDATE TAB_PERFIL SET CNOME=:NOME, SITUACAO=:SITUACAO ');
-            dm.qry_perfil.SQL.Add('WHERE COD_PERFIL = :COD_PERFIL');
+            dm.qry_perfil.SQL.Add('WHERE COD_PERFIL =:COD_PERFIL');
 
             dm.qry_perfil.ParamByName('COD_PERFIL').Value := Cod_Per;
         end;
@@ -223,9 +223,17 @@ begin
         else
             dm.qry_perfil.ParamByName('SITUACAO').Value := 'I';
 
-
         dm.qry_perfil.ExecSQL;
 
+        if Modo = 'I' then
+        begin
+            dm.qry_geral.Active := False;
+            dm.qry_geral.SQL.Clear;
+            dm.qry_geral.SQL.Add('SELECT IFNULL(MAX(COD_PERFIL), 0) AS COD_PERFIL FROM TAB_PERFIL');
+            dm.qry_geral.Active := True;
+
+            Cod_Per := dm.qry_geral.FieldByName('COD_PERFIL').AsString;
+        end;
     except on ex:exception do
     begin
         showmessage('Erro ao cadastrar Perfil: ' + ex.Message);
@@ -262,8 +270,8 @@ begin
 
             if Modo = 'I' then
             begin
-                dm.qry_perfil_opcao.SQL.Add('INSERT INTO TAB_PERFIL_OPCAO(COD_PERFIL, COD_OPCAO, COD_PERMISSAO ');
-                dm.qry_perfil_opcao.SQL.Add('VALUES(:COD_PERFIL, :COD_OPCAO, :COD_PERMISSAO ');
+                dm.qry_perfil_opcao.SQL.Add('INSERT INTO TAB_PERFIL_OPCAO(COD_PERFIL, COD_OPCAO, COD_PERMISSAO) ');
+                dm.qry_perfil_opcao.SQL.Add('VALUES(:COD_PERFIL, :COD_OPCAO, :COD_PERMISSAO) ');
             end
             else
             begin
@@ -385,8 +393,10 @@ begin
     if Pos('I',aOpcao)>0 then Result := Result+' Inclusão,';
     if Pos('A',aOpcao)>0 then Result := Result+' Alteração,';
     if Pos('D',aOpcao)>0 then Result := Result+' Exclusão';
-    if Result[Length(Result)-1]=',' then Result := Copy(Result,0,Length(Result)-1);
-    if Result='' then Result := 'SEM PERMISSÕES!';
+    if Result='' then
+        Result := 'SEM PERMISSÕES!'
+    else
+        if Result[Length(Result)-1]=',' then Result := Copy(Result,0,Length(Result)-1);
 
 end;
 

@@ -9,7 +9,8 @@ uses
   uFancyDialog in 'Units\uFancyDialog.pas',
   uDm in 'uDm.pas' {Dm: TDataModule},
   uFrmCliente in 'uFrmCliente.pas' {FrmCliente},
-  uFrmPerfil in 'uFrmPerfil.pas' {FrmPerfil};
+  uFrmPerfil in 'uFrmPerfil.pas' {FrmPerfil},
+  UFrmUsuario in 'UFrmUsuario.pas' {FrmUsuario};
 
 {$R *.res}
 
@@ -18,6 +19,5 @@ begin
   Application.Initialize;
   Application.CreateForm(TFrmLogin, FrmLogin);
   Application.CreateForm(TDm, Dm);
-  Application.CreateForm(TFrmPerfil, FrmPerfil);
   Application.Run;
 end.

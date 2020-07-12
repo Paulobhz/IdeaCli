@@ -47,6 +47,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure rctPerfilClick(Sender: TObject);
+    procedure rctUsuarioClick(Sender: TObject);
   private
     Fancy : TFancyDialog;
     { Private declarations }
@@ -63,7 +64,7 @@ var
 implementation
 
 uses
-  uFrmCliente, uFrmPerfil;
+  uFrmCliente, uFrmPerfil, UFrmUsuario;
 
 {$R *.fmx}
 
@@ -100,6 +101,19 @@ begin
 
     end else
         fancy.Show(TIconDialog.Error,'Permissão','Você não tem permissão para acessar essa opção!','Ok');
+end;
+
+procedure TFrmMenu.rctUsuarioClick(Sender: TObject);
+begin
+    if VerificaPermissao('USR','C') then
+    begin
+        if not Assigned(FrmUsuario) then
+            Application.CreateForm(TFrmUsuario,FrmUsuario);
+        FrmUsuario.Show;
+
+    end else
+        fancy.Show(TIconDialog.Error,'Permissão','Você não tem permissão para acessar essa opção!','Ok');
+
 end;
 
 function TFrmMenu.VerificaPermissao(aOpcao: string; aPermiss: Char): Boolean;

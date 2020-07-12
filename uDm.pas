@@ -18,6 +18,7 @@ type
     qry_usuario: TFDQuery;
     qry_perfil: TFDQuery;
     qry_perfil_opcao: TFDQuery;
+    qry_perfis: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

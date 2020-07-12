@@ -8,6 +8,7 @@ object Dm: TDm
       'Database=D:\Projetos\IdeaCli\BD\IdeaCli.db'
       'OpenMode=ReadWrite'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 56
     Top = 40
@@ -35,6 +36,13 @@ object Dm: TDm
   object qry_perfil_opcao: TFDQuery
     Connection = Conn
     Left = 144
+    Top = 176
+  end
+  object qry_perfis: TFDQuery
+    Connection = Conn
+    SQL.Strings = (
+      'SELECT * FROM TAB_PERFIL')
+    Left = 232
     Top = 176
   end
 end

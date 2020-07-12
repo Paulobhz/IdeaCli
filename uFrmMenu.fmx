@@ -7067,6 +7067,7 @@ object FrmMenu: TFrmMenu
         Stroke.Kind = None
         XRadius = 16.000000000000000000
         YRadius = 16.000000000000000000
+        OnClick = rctUsuarioClick
         object Image2: TImage
           MultiResBitmap.Height = 48
           MultiResBitmap.Width = 24
