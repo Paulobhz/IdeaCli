@@ -6819,6 +6819,8 @@ object FrmMenu: TFrmMenu
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object StyleBook: TStyleBook
     Styles = <
@@ -7012,6 +7014,7 @@ object FrmMenu: TFrmMenu
         Stroke.Kind = None
         XRadius = 16.000000000000000000
         YRadius = 16.000000000000000000
+        OnClick = rctPerfilClick
         object Image1: TImage
           MultiResBitmap.Height = 48
           MultiResBitmap.Width = 24
@@ -7036,6 +7039,7 @@ object FrmMenu: TFrmMenu
               FileName = 'D:\Projetos\Ideagro\Img\213140 - f0e8.png'
             end>
           Align = Client
+          HitTest = False
           Size.Width = 80.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False
@@ -7092,6 +7096,7 @@ object FrmMenu: TFrmMenu
               FileName = 'D:\Projetos\Ideagro\Img\212941 - f007.png'
             end>
           Align = Client
+          HitTest = False
           Size.Width = 80.000000000000000000
           Size.Height = 63.000000000000000000
           Size.PlatformDefault = False

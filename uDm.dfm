@@ -22,4 +22,19 @@ object Dm: TDm
     Left = 144
     Top = 104
   end
+  object qry_usuario: TFDQuery
+    Connection = Conn
+    Left = 232
+    Top = 104
+  end
+  object qry_perfil: TFDQuery
+    Connection = Conn
+    Left = 56
+    Top = 176
+  end
+  object qry_perfil_opcao: TFDQuery
+    Connection = Conn
+    Left = 144
+    Top = 176
+  end
 end

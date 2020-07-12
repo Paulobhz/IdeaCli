@@ -15,6 +15,9 @@ type
     Conn: TFDConnection;
     qry_cliente: TFDQuery;
     qry_geral: TFDQuery;
+    qry_usuario: TFDQuery;
+    qry_perfil: TFDQuery;
+    qry_perfil_opcao: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

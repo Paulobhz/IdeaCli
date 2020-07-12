@@ -83,11 +83,14 @@ type
       const AItem: TListViewItem);
     procedure FormCreate(Sender: TObject);
     procedure img_AddClick(Sender: TObject);
+    procedure img_salvarClick(Sender: TObject);
+    procedure img_excluirClick(Sender: TObject);
   private
     cod_Cli, modo : string;
     fancy : TFancyDialog;
     procedure AddCliente(cod_cliente, nome, endereco, cidade, fone: string);
     procedure ListarCliente(busca: string; ind_clear: boolean; delay: integer=0);
+    procedure ClickDelete(Sender: TObject);
 
     { Private declarations }
   public
@@ -167,19 +170,20 @@ end;
 
 procedure TFrmCliente.img_AddClick(Sender: TObject);
 begin
-    cod_Cli := '';
-    modo     := 'I';
-    edt_Obs.Text      := '';
-    edt_cid.Text      := '';
-    edt_nome.Text     := '';
-    edt_Fone.Text     := '';
-    edt_email.Text    := '';
-    edt_CNPJCPF.Text  := '';
-    edt_Endereco.Text := '';
-    edt_valor.Text    := '';
-    edt_nome.SetFocus;
-
+    cod_Cli            := '';
+    modo               := 'I';
+    edt_Obs.Text       := '';
+    edt_cid.Text       := '';
+    edt_nome.Text      := '';
+    edt_Fone.Text      := '';
+    edt_email.Text     := '';
+    edt_CNPJCPF.Text   := '';
+    edt_Endereco.Text  := '';
+    edt_valor.Text     := '0,00';
+    lbl_Nome_Item.Text := 'NOVO CLIENTE';
     inherited;
+
+    edt_nome.SetFocus;
 
 end;
 
@@ -187,6 +191,85 @@ procedure TFrmCliente.img_buscaClick(Sender: TObject);
 begin
     inherited;
     ListarCliente(edt_busca.Text,True);
+end;
+
+procedure TFrmCliente.ClickDelete(Sender: TObject);
+begin
+    try
+        dm.qry_cliente.Active := false;
+        dm.qry_cliente.SQL.Clear;
+        dm.qry_cliente.SQL.Add('DELETE FROM TAB_CLIENTE');
+        dm.qry_cliente.SQL.Add('WHERE COD_CLIENTE = :COD_CLIENTE');
+        dm.qry_cliente.ParamByName('COD_CLIENTE').Value := cod_Cli;
+        dm.qry_cliente.ExecSQL;
+
+    except on ex:exception do
+    begin
+        showmessage('Erro ao excluir cliente: ' + ex.Message);
+        exit;
+    end;
+    end;
+
+    ListarCliente(edt_busca.Text, true, 0);
+    ActLista.Execute;
+end;
+
+procedure TFrmCliente.img_excluirClick(Sender: TObject);
+begin
+    fancy.Show(TIconDialog.Question, 'Confirmação', 'Deseja excluir o cliente?',
+               'Sim', ClickDelete, 'Não');
+end;
+
+procedure TFrmCliente.img_salvarClick(Sender: TObject);
+var
+    valor : string;
+begin
+    try
+        dm.qry_cliente.Active := false;
+        dm.qry_cliente.SQL.Clear;
+
+        if Modo = 'I' then
+        begin
+            dm.qry_cliente.SQL.Add('INSERT INTO TAB_CLIENTE(CNPJ_CPF, NOME, FONE, EMAIL, ENDERECO, ');
+            dm.qry_cliente.SQL.Add('CIDADE, OBS, VALOR_LIMITE)');
+            dm.qry_cliente.SQL.Add('VALUES(:CNPJ_CPF, :NOME, :FONE, :EMAIL, :ENDERECO, ');
+            dm.qry_cliente.SQL.Add(':CIDADE, :OBS, :VALOR_LIMITE )');
+        end
+        else
+        begin
+            dm.qry_cliente.SQL.Add('UPDATE TAB_CLIENTE SET CNPJ_CPF=:CNPJ_CPF, NOME=:NOME, FONE=:FONE, ');
+            dm.qry_cliente.SQL.Add('EMAIL=:EMAIL, ENDERECO=:ENDERECO, CIDADE=:CIDADE, OBS=:OBS, VALOR_LIMITE=:VALOR_LIMITE ');
+            dm.qry_cliente.SQL.Add('WHERE COD_CLIENTE = :COD_CLIENTE');
+
+            dm.qry_cliente.ParamByName('COD_CLIENTE').Value := cod_cli;
+        end;
+
+        // 8.500,00
+        valor := StringReplace(edt_valor.Text, '.', '', [rfReplaceAll]); // 8500,00
+        valor := StringReplace(valor, ',', '', [rfReplaceAll]); // 850000
+
+
+        dm.qry_cliente.ParamByName('CNPJ_CPF').Value := edt_CNPJCPF.Text;
+        dm.qry_cliente.ParamByName('NOME').Value := edt_nome.Text;
+        dm.qry_cliente.ParamByName('FONE').Value := edt_Fone.Text;
+        dm.qry_cliente.ParamByName('EMAIL').Value := edt_email.Text;
+        dm.qry_cliente.ParamByName('ENDERECO').Value := edt_Endereco.Text;
+        dm.qry_cliente.ParamByName('CIDADE').Value := edt_cid.Text;
+        dm.qry_cliente.ParamByName('OBS').Value := edt_Obs.Text;
+        dm.qry_cliente.ParamByName('VALOR_LIMITE').Value := valor.ToDouble / 100;
+
+        dm.qry_cliente.ExecSQL;
+
+    except on ex:exception do
+    begin
+        showmessage('Erro ao cadastrar cliente: ' + ex.Message);
+        exit;
+    end;
+    end;
+
+    ListarCliente(edt_busca.Text, true, 600);
+    ActLista.Execute
+
 end;
 
 procedure TFrmCliente.img_voltar_listaClick(Sender: TObject);
@@ -273,15 +356,17 @@ begin
         dm.qry_geral.ParamByName('COD_CLIENTE').Value := cod_cli;
         dm.qry_geral.Active := true;
 
-        edt_cod.Text      := dm.qry_geral.FieldByName('COD_CLIENTE').AsString;
-        edt_Obs.Text      := dm.qry_geral.FieldByName('OBS').AsString;
-        edt_cid.Text      := dm.qry_geral.FieldByName('CIDADE').AsString;
-        edt_nome.Text     := dm.qry_geral.FieldByName('NOME').AsString;
-        edt_Fone.Text     := dm.qry_geral.FieldByName('FONE').AsString;
-        edt_email.Text    := dm.qry_geral.FieldByName('EMAIL').AsString;
-        edt_CNPJCPF.Text  := dm.qry_geral.FieldByName('CNPJ_CPF').AsString;
-        edt_Endereco.Text := dm.qry_geral.FieldByName('ENDERECO').AsString;
-        edt_valor.Text    := FormatFloat('#,##0.00', dm.qry_geral.FieldByName('VALOR_LIMITE').AsFloat);
+        edt_cod.Text       := dm.qry_geral.FieldByName('COD_CLIENTE').AsString;
+        edt_Obs.Text       := dm.qry_geral.FieldByName('OBS').AsString;
+        edt_cid.Text       := dm.qry_geral.FieldByName('CIDADE').AsString;
+        edt_nome.Text      := dm.qry_geral.FieldByName('NOME').AsString;
+        edt_Fone.Text      := dm.qry_geral.FieldByName('FONE').AsString;
+        edt_email.Text     := dm.qry_geral.FieldByName('EMAIL').AsString;
+        edt_CNPJCPF.Text   := dm.qry_geral.FieldByName('CNPJ_CPF').AsString;
+        edt_Endereco.Text  := dm.qry_geral.FieldByName('ENDERECO').AsString;
+        edt_valor.Text     := FormatFloat('#,##0.00', dm.qry_geral.FieldByName('VALOR_LIMITE').AsFloat);
+
+        lbl_Nome_Item.Text := 'CLIENTE: '+ edt_nome.Text;
 
         edt_nome.SetFocus;
 

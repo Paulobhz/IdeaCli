@@ -1,0 +1,400 @@
+inherited FrmPerfil: TFrmPerfil
+  Caption = 'Perfil'
+  ClientWidth = 390
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  inherited TabControl: TTabControl
+    Size.Width = 390.000000000000000000
+    TabIndex = 1
+    Sizes = (
+      390s
+      535s
+      390s
+      535s)
+    inherited TabLista: TTabItem
+      IsSelected = False
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited lytBusca: TLayout
+        Size.Width = 390.000000000000000000
+        inherited rctBusca: TRectangle
+          Size.Width = 370.000000000000000000
+          inherited edt_busca: TEdit
+            Size.Width = 294.000000000000000000
+          end
+          inherited img_busca: TImage
+            MultiResBitmap.Height = 48
+            MultiResBitmap.Width = 48
+            MultiResBitmap = <
+              item
+                Width = 48
+                Height = 48
+                PNG = {
+                  89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+                  87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  0443494441546843ED975D681C5514C7CFBD33496C9BA4E888D40F10B5502982
+                  8F7EED36C462B1BA4141A288FA6AD14711154977BB0955B4F5A1FA94D75A109B
+                  17315B1582049B200ABEA820F8E09B622BDD0463349BEEEC3D9E73E764133169
+                  EE9D597585F941D873CE6E76E73F73EFB9FF03393939393939FF6794BCA66674
+                  F46CD0B8FDFAFB01F01150EAEECBAB705B63391E1C0CC3CBA61F2EE8C07CAB40
+                  7F1AABF8FD8FAAC317E4DF3A460601A84AE5B9A74D0BCA41A0F64A716BEA109B
+                  08CE401C8C9D7BEDDE9FA49A9954021EAACCEE09303C43E1C1A4E24EEB0F58D6
+                  3BF1F9DAF88177A594092DAFCE8C543EDF1BA0FE82C20D17DF5844C453807008
+                  9AE19E2515F7A0DAB10B0CDC81A89E0334F3F241087642BF02757AA43C57E5A7
+                  28E5D4787D4172E7F9E2F5CD49A58E80D149D550131F9E28FC96D436A774F4FC
+                  102A33A921D82725E6C5E9F1E25B12A7C24300AA91F2FC0C05F6CEAFC2EF2BBD
+                  B8EBB1DA44F163CE5D18ADCCF637509FA51B7098F3A57A6C06AE0D876AD562FB
+                  09F9E22CA0543EFF0C3FFA24ABD38A891EF6B9F835862AB3570D1A3D034A1738
+                  3706BE5B0EE23B3FAB0EC7F6039E38ED016E95DC6D24A587119D4C73F10C5D68
+                  A3A9CD93BC9939D71AF6F763CF13F6CD143809E03EBFDE2A1B8BBCE693381D9F
+                  54877FD43BF084A47411E68884DE3876213AA404C4BED3DB6D5817A8514DD6A9
+                  AB26D942E1D157BE8C92D80F370174C24A449B469D933013D3AFDF73F11A80AF
+                  922C52CDBEE65D49EC879300B6071202C4E137127500F3B504A0D1ACFF86076E
+                  7B80BC8D84B0D4DBA027DF29F425096869AADD127AE124808D9984300003BD12
+                  6687369444B44AD7F6831F4E02D8554A08AAB5728B8499510A6F95900F849F25
+                  F2C249005B6209E93C5645093361CF96A6B94F526A0ED8DE0F3E3809603F2F21
+                  C5ADA724CCC4CAFE1B0EEA9EF03A9B34E152DFF7BFA46A0E4E027818613F6F13
+                  B2006CCC6C9C1A7A8E68C624010CE1BDA9A9C7FFB93DC093941D460476956CCC
+                  24F5A6549E7F96EE845D8A7C9885469DB26FA4C049808526A9B67F214BCCAE92
+                  8D997DCF835265FE10C0E23B924284F0F607C70B3F48EA8DB3001E0379929294
+                  D087D9553E5899BD490ADB6047D023800B350557F74891AAB022612ABC27A264
+                  925A77A676442463C6DE86ED8194DB70B7E10D9BACF92D3A1842757AA2784C32
+                  2F528C7476B0798186913707A3B0FD04792D27DE86ED019DB07448719FE756D9
+                  EE365722A5881402124A95B902B66092FDBC94B68545F29AE765433FFCAA94D7
+                  492122B500863671C8C348E2E71768C28A36FF3EEAF3DC2AB9DBAC6DD891A373
+                  C7E8D72BF6FD8D788AC8246023ECE7D912B3AB646366BD0DD9033E61F990DAAC
+                  CF774244C704A425AB88FF5C00934544570860B612818063B5F103C725FD1B5D
+                  2380D94C0477AE1B571BD1D41B0FFC2AA5BFE06E25FE05EC72A16523A925AA53
+                  E50A7495008645F0B2E13BCF0E18237C69ABBBDFD58CBE3CB39BFF24CDC9C9C9
+                  E94A00FE047B52AD52B598F6550000000049454E44AE426082}
+                FileName = 
+                  'D:\99Coders\Mobile 360\Curso 2.0\03 - App mobile\05 - Tela princ' +
+                  'ipal - Tabs\FontesDelphi\Images\icon-busca.png'
+              end>
+            Position.X = 310.000000000000000000
+          end
+        end
+      end
+      inherited lv_itens: TListView
+        Size.Width = 390.000000000000000000
+        ItemAppearance.ItemHeight = 70
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'TxtSituacao'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 14.000000000000000000
+            Appearance.TextColor = xFF7796CB
+            Appearance.Width = 370.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.PlaceOffset.X = 10.000000000000000000
+            Appearance.PlaceOffset.Y = 40.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'TxtNome'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 14.000000000000000000
+            Appearance.WordWrap = True
+            Appearance.TextColor = xFF576490
+            Appearance.Width = 370.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 10.000000000000000000
+            Appearance.PlaceOffset.Y = 10.000000000000000000
+          end>
+      end
+      inherited tctToolBarLista: TRectangle
+        Size.Width = 390.000000000000000000
+        inherited lbl_Nome: TLabel
+          Size.Width = 390.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          Text = 'Cadastro de Perfil'
+        end
+        inherited img_Add: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0172494441545847ED953F4E854010C66101C5C2C29297D87B005B0B351E418F
+                F0AE62EF096CB4F312C6C4DA424F6062140A0A4990BF7EB38CE42910B3C3B331
+                FB4B263B0CB3CBB7BBECAC63B148699AE6A82CCBC7A2289EE19F71D818C5AD11
+                6DDBFAB0E3388EF7922459C05FF22B63440200F5DB8AA248C15C08D8EEC2E648
+                05B4B0A67335ABBE1152016BC30A9823C0E576162201AEEB96683EBA274DCDAD
+                31A302F89C0713E6C142A4F95DB6462146C7712CBF37CEFDC6601951D50E917C
+                0277A38B0CA0D9D280079EE7ED5300D5F0C5F7FD4B8AC326B7062B77AF94BAE1
+                C771505E9F30F89F90E7F91B7FA667B00558811D76D74E5DD79BECF60C960B42
+                4F21628996CA2B55BC9F50D5F390B31B04C182025996BD8761F800972634B605
+                3A86E5BF865DE8C85C309B73BDAEA0AAAA3B0E1B233A86F8A68786EC0BD13884
+                B423F55BED3BF9E7FF8658F9BAB002FE8D00F138D28E548C462F1753440270A9
+                D4B05B5C42AF699AE6A86E57FCCA6231C4713E01E335062190B9386100000000
+                49454E44AE426082}
+              FileName = 
+                'D:\99Coders\Mobile 360\Curso 2.0\03 - App mobile\05 - Tela princ' +
+                'ipal - Tabs\FontesDelphi\Images\add.png'
+            end>
+          Position.X = 335.000000000000000000
+        end
+        inherited img_voltar: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0097494441545847ED96C10980300C458B1B084EE3009E9DC0499CC08BEB3893
+                0BD44B1B7F20811E3C094D45F2A07C680E9FFFDB4382E3FC0A22EA73CE2BCE22
+                5776C07C4829ED50821E726D032767F318E3054E3430CAA83E65723687CC32AA
+                CF43F24946F5F1E49EDC343903F3AD46F24EF4FB347F0206A6ED3EA1E24D28DE
+                84F2D526EC1612A56C026ABB9229DC04D2B7594A1DE71D21DC91E1584EFC8494
+                E10000000049454E44AE426082}
+              FileName = 'D:\Projetos\Mobile-360\Images\icon-voltar.png'
+            end>
+        end
+      end
+    end
+    inherited TabItem: TTabItem
+      IsSelected = True
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited rctToolBarItem: TRectangle
+        Size.Width = 390.000000000000000000
+        inherited lbl_Nome_Item: TLabel
+          Size.Width = 390.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+        end
+        inherited img_salvar: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                013C494441545847ED945D4B02411486B7FBC8D4343553A4FFDF5574D17D1099
+                1FA9956646F437F6ABE7C0BB214888E54C37F3C03033E71DCF33BBE046814020
+                E0833CCF4B699ADE302E55F207F2E32449EE99F3388EE72AFB41F2BEE4EF5996
+                7515B9076799F150C8993A8ADCC3935678F281E42BF6E78ADC23F950F237F66D
+                45EE4156453E927CF91FF2B1E4AFECCF14ED06FFD56BC6157D0E55DA0A674F90
+                3F4ABE40DE52B41BFCFE80061FD68886B7343A52F4239CA9717622F9FCD7F202
+                1A5CD0E85397B8632A29DA40F2E99ABCA9E86FD0A8B7F626EC435256F40D67EA
+                6433C95F981A8AF603822E8DED03629718B0AF28B2EC94EC49F267DB2BDA2FF4
+                EF2058E912234455960D935ACD2E41ADAEE36E40D046B4D42526ACED75DB7AE6
+                5C5E80A88578616203F9945A4DB11F1036118F197DEFF24020E08E28FA025382
+                908804461FCE0000000049454E44AE426082}
+              FileName = 'D:\Projetos\Mobile-360\Images\icon-salvar.png'
+            end>
+          Position.X = 335.000000000000000000
+        end
+        inherited img_voltar_lista: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0097494441545847ED96C10980300C458B1B084EE3009E9DC0499CC08BEB3893
+                0BD44B1B7F20811E3C094D45F2A07C680E9FFFDB4382E3FC0A22EA73CE2BCE22
+                5776C07C4829ED50821E726D032767F318E3054E3430CAA83E65723687CC32AA
+                CF43F24946F5F1E49EDC343903F3AD46F24EF4FB347F0206A6ED3EA1E24D28DE
+                84F2D526EC1612A56C026ABB9229DC04D2B7594A1DE71D21DC91E1584EFC8494
+                E10000000049454E44AE426082}
+              FileName = 'D:\Projetos\Mobile-360\Images\icon-voltar.png'
+            end>
+        end
+      end
+      object lytCod: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 40.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 370.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        object Label1: TLabel
+          Align = Left
+          StyledSettings = [Family, FontColor]
+          Size.Width = 100.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.HorzAlign = Trailing
+          Text = 'C'#243'digo:'
+          TabOrder = 0
+        end
+        object Rectangle1: TRectangle
+          Align = Client
+          Fill.Color = xFFA3BCF9
+          Opacity = 0.800000011920929000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 16.000000000000000000
+          YRadius = 16.000000000000000000
+          object edt_cod: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Enabled = False
+            Margins.Left = 3.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 254.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+      end
+      object lytNome: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 153.000000000000000000
+        Size.Width = 370.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        object Label2: TLabel
+          Align = Left
+          StyledSettings = [Family, FontColor]
+          Size.Width = 100.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.HorzAlign = Trailing
+          Text = 'Nome:'
+          TabOrder = 0
+        end
+        object Rectangle2: TRectangle
+          Align = Client
+          Fill.Color = xFFA3BCF9
+          Opacity = 0.800000011920929000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 16.000000000000000000
+          YRadius = 16.000000000000000000
+          object edt_nome: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 3.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 254.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+      end
+      object lytSituacao: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 218.000000000000000000
+        Size.Width = 370.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        object Label3: TLabel
+          Align = Left
+          StyledSettings = [Family, FontColor]
+          Size.Width = 100.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.HorzAlign = Trailing
+          Text = 'Situa'#231#227'o:'
+          TabOrder = 0
+        end
+        object swt_Situacao: TSwitch
+          Align = Center
+          IsChecked = False
+          TabOrder = 1
+        end
+      end
+      object Layout1: TLayout
+        Align = Client
+        Size.Width = 390.000000000000000000
+        Size.Height = 267.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        object Label4: TLabel
+          Align = Top
+          StyledSettings = [Family, FontColor]
+          Margins.Top = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 390.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'OP'#199#213'ES'
+          TabOrder = 0
+        end
+        object rctOptCli: TRectangle
+          Align = Top
+          Fill.Color = xFFA3BCF9
+          Opacity = 0.800000011920929000
+          Margins.Left = 15.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 360.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 16.000000000000000000
+          YRadius = 16.000000000000000000
+          object Label5: TLabel
+            Align = Client
+            StyledSettings = [Family, FontColor]
+            Margins.Left = 15.000000000000000000
+            Margins.Right = 15.000000000000000000
+            Size.Width = 330.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+            Text = 'C'#243'digo:'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+  end
+end
