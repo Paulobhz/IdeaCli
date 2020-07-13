@@ -41,7 +41,7 @@ object Dm: TDm
   object qry_perfis: TFDQuery
     Connection = Conn
     SQL.Strings = (
-      'SELECT * FROM TAB_PERFIL')
+      'SELECT * FROM TAB_PERFIL P WHERE P.SITUACAO='#39'A'#39)
     Left = 232
     Top = 176
   end

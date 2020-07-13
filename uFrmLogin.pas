@@ -62,20 +62,17 @@ uses
 {$R *.fmx}
 
 procedure TFrmLogin.btnAcessarClick(Sender: TObject);
-var
-  aLogin : string;
 begin
     //validar usuário
-    aLogin := UpperCase(edtUsuario.Text);
     Dm.qry_usuario.Active := False;
     Dm.qry_usuario.SQL.Clear;
     Dm.qry_usuario.SQL.Add('SELECT * FROM TAB_USUARIO U ');
     Dm.qry_usuario.SQL.Add('WHERE U.LOGIN = :LOGIN');
-    Dm.qry_usuario.ParamByName('LOGIN').Value := aLogin;
+    Dm.qry_usuario.ParamByName('LOGIN').Value := edtUsuario.Text;
     Dm.qry_usuario.Active := True;
 
     if (Dm.qry_usuario.RecordCount>0)and
-       (Dm.qry_usuario.FieldByName('LOGIN').AsString = aLogin)and
+       (Dm.qry_usuario.FieldByName('LOGIN').AsString = edtUsuario.Text)and
        (Dm.qry_usuario.FieldByName('SENHA').AsString = edtSenha.text) then
     begin
 
@@ -103,7 +100,7 @@ begin
                   FrmMenu.PPermission[2].aPermissao := Dm.qry_perfil_opcao.FieldByName('COD_PERMISSAO').AsString;
                 if Dm.qry_perfil_opcao.FieldByName('COD_OPCAO').AsString = 'PER' then
                   FrmMenu.PPermission[3].aPermissao := Dm.qry_perfil_opcao.FieldByName('COD_PERMISSAO').AsString;
-
+                Dm.qry_perfil_opcao.Next;
             end;
 
        end;
