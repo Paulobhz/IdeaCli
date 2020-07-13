@@ -50,8 +50,8 @@ begin
         {$ENDIF}
 
         {$IFDEF MSWINDOWS}
-        //Params.Values['Database'] := System.SysUtils.GetCurrentDir + '\DB\pedidos.db';
-        Params.Values['Database'] := 'D:\Projetos\IdeaCli\BD\IdeaCli.db';
+        Params.Values['Database'] := System.SysUtils.GetCurrentDir + '\DB\pedidos.db';
+        //Params.Values['Database'] := 'D:\Projetos\IdeaCli\BD\IdeaCli.db';
         {$ENDIF}
 
         try
